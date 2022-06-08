@@ -4,6 +4,11 @@ import { ref } from "vue";
 import CartItem from "./CartItem.vue";
 import products from "@/data/products.json";
 import cartItems from "@/data/cart.json";
+import { useProductStore } from "@/stores/ProductStore";
+import { useCartStore } from "@/stores/CartStore";
+
+const productStore = useProductStore();
+const cartStore = useCartStore();
 
 // data
 const active = ref(false);
