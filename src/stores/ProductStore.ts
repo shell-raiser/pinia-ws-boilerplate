@@ -1,8 +1,9 @@
+import type { Product } from "@/types";
 import { defineStore, acceptHMRUpdate } from "pinia";
 export const useProductStore = defineStore("ProductStore", {
   state: () => {
     return {
-      products: [],
+      products: [] as Product[],
     };
   },
   actions: {

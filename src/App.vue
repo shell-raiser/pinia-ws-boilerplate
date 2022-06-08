@@ -3,9 +3,14 @@ import TheHeader from "@/components/TheHeader.vue";
 import ProductCard from "@/components/ProductCard.vue";
 import { useProductStore } from "@/stores/ProductStore";
 import { useCartStore } from "@/stores/CartStore";
-import { storeToRefs } from "pinia";
 const productStore = useProductStore();
 const cartStore = useCartStore();
+
+// cartStore.$subscribe((mutation, state) => {
+//   window.localStorage.setItem("cartStore", JSON.stringify(state));
+// });
+// const localData = window.localStorage.getItem("cartStore");
+// if (localData) cartStore.$state = JSON.parse(localData);
 
 productStore.fill();
 </script>
@@ -13,6 +18,8 @@ productStore.fill();
 <template>
   <div class="container">
     <TheHeader />
+    <AppButton @click="cartStore.undo()">Undo</AppButton>
+    <AppButton @click="cartStore.redo()">Redo</AppButton>
     <ul class="sm:flex flex-wrap lg:flex-nowrap gap-5">
       <ProductCard
         v-for="product in productStore.products"
