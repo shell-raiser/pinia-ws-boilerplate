@@ -2,9 +2,11 @@
 // imports
 import { ref } from "vue";
 import CartItem from "./CartItem.vue";
-import products from "@/data/products.json";
+//import products from "@/data/products.json";
 import cartItems from "@/data/cart.json";
-
+import { useProductStore } from "@/stores/ProductStore";
+const productStore = useProductStore();
+const products = productStore.products
 // data
 const active = ref(false);
 

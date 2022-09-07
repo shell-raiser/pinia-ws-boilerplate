@@ -1,10 +1,12 @@
 <script setup>
 import TheHeader from "@/components/TheHeader.vue";
 import ProductCard from "@/components/ProductCard.vue";
-import products from "@/data/products.json";
+//import products from "@/data/products.json";
 
 import { useProductStore } from "./stores/ProductStore";
-useProductStore();
+const productStore = useProductStore();
+const products = productStore.products
+console.log(productStore.products)
 
 </script>
 
