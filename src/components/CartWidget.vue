@@ -7,6 +7,10 @@ import cartItems from "@/data/cart.json";
 
 // data
 const active = ref(false);
+
+
+import {useCartStore} from "@/stores/CartStore"
+useCartStore();
 </script>
 <template>
   <div class="relative">
